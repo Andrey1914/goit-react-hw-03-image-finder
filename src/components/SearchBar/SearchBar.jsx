@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { FcSearch } from 'react-icons/fc';
+import { Box } from 'components/Box';
+import { Form, Input } from './SearchBarStyled';
+import { Btn } from 'components/Button/ButtonStyled';
 
 export default class SearchBar extends Component {
   state = {
@@ -28,21 +31,27 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <header>
-        <form onSubmit={this.handleSubmit}>
-          <input
+      <Box
+        as="header"
+        bg="primary"
+        p={4}
+        display="flex"
+        justifyContent="center"
+      >
+        <Form onSubmit={this.handleSubmit}>
+          <Input
             type="text"
             autoComplete="off"
-            autofocus
+            autoFocus
             placeholder="Search images and photos"
             value={this.state.input}
             onChange={this.handleInputChange}
-          ></input>
-          <button type="submit">
+          ></Input>
+          <Btn type="submit">
             <FcSearch size={20} />
-          </button>
-        </form>
-      </header>
+          </Btn>
+        </Form>
+      </Box>
     );
   }
 }

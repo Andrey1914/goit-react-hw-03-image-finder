@@ -3,6 +3,7 @@ export const theme = {
     text: '#000',
     textHover: '#fff',
     background: '#fff',
+    bakdrop: '#ccc',
     primary: '#07c',
     secondary: '#05a',
     accent: '#609',
