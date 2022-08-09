@@ -5,7 +5,7 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import Button from 'components/Button/Button';
 import Loader from 'components/Loader/Loader';
 import Modal from 'components/Modal/Modal';
-import { List } from './ImageGalleryStyled';
+import { Box } from 'components/Box';
 
 export default class ImageGallery extends Component {
   state = {
@@ -64,13 +64,20 @@ export default class ImageGallery extends Component {
     return (
       <>
         <div>
-          <List>
+          <Box
+            as="ul"
+            display="flex"
+            flexWrap="wrap"
+            justifyContent="center"
+            gridGap={4}
+            mb={4}
+          >
             <ImageGalleryItem
               hits={hits}
               onToggleModal={this.toggleModal}
               getModalURL={this.getModalURL}
             />
-          </List>
+          </Box>
         </div>
         {loader && <Loader />}
         {totalPage > 1 && totalPage !== page && <Button loadMore={loadMore} />}

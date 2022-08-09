@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SearchBar from './SearchBar/SearchBar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Section from './Section/Section';
+
 // import Button from './Button/Button';
 import { Global } from '@emotion/react';
 import { GlobalStyles } from './GlobalStyles';
@@ -41,6 +42,7 @@ export default class App extends Component {
             loadMore={this.loadMore}
           />
         </Section>
+
         <ToastContainer autoClose={2500} />
       </div>
     );

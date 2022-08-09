@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Element, Image } from './ImageGalleryItemStyled';
+import { Image } from './ImageGalleryItemStyled';
+import { Box } from 'components/Box';
 
 export default class ImageGalleryItem extends Component {
   openModal = event => {
@@ -11,14 +12,21 @@ export default class ImageGalleryItem extends Component {
   render() {
     return this.props.hits.map(({ id, webformatURL, largeImageURL }) => {
       return (
-        <Element key={id}>
+        <Box
+          key={id}
+          as="li"
+          width={350}
+          contain="content"
+          borderRadius="normal"
+          border="normal #000"
+        >
           <Image
             src={webformatURL}
             alt=""
             data-url={largeImageURL}
             onClick={this.openModal}
           />
-        </Element>
+        </Box>
       );
     });
   }
