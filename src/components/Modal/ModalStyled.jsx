@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const BackDrop = styled.div`
+export const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,8 @@ export const BackDrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${p => p.theme.colors.backdrop};
+  /* background-color: ${p => p.theme.colors.backdrop}; */
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
 export const ModalBoard = styled.div`

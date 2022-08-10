@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
-import { BackDrop, ModalBoard } from './ModalStyled';
+import { Backdrop, ModalBoard } from './ModalStyled';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#root');
 
 export default class Modal extends Component {
   componentDidMount() {
-    const backDrop = document.querySelector('#backDrop');
+    const backdrop = document.querySelector('#backdrop');
     window.addEventListener('keydown', this.closeModal);
-    backDrop.addEventListener('click', this.closeModal);
+    backdrop.addEventListener('click', this.closeModal);
   }
 
   componentWillUnmount() {
@@ -24,11 +24,11 @@ export default class Modal extends Component {
 
   render() {
     return createPortal(
-      <BackDrop id="backDrop">
+      <Backdrop id="backdrop">
         <ModalBoard>
           <img src={this.props.url} alt="" />
         </ModalBoard>
-      </BackDrop>,
+      </Backdrop>,
       modalRoot
     );
   }
