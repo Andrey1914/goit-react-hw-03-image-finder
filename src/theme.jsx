@@ -1,9 +1,10 @@
 export const theme = {
   colors: {
+    black: '#000',
     text: '#000',
     textHover: '#fff',
     background: '#fff',
-    bakdrop: 'rgba(0, 0, 0, 0.8)',
+    backdrop: 'rgba(0, 0, 0, 0.8)',
     primary: '#07c',
     secondary: '#05a',
     accent: '#609',

@@ -18,7 +18,7 @@ export default class ImageGalleryItem extends Component {
           width={350}
           contain="content"
           borderRadius="normal"
-          border="normal #000"
+          boxShadow="0px 5px 10px 2px rgba(45, 90, 124, 0.2)"
         >
           <Image
             src={webformatURL}

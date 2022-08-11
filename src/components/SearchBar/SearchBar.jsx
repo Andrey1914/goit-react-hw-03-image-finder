@@ -37,8 +37,14 @@ export default class SearchBar extends Component {
         p={4}
         display="flex"
         justifyContent="center"
+        minHeight={64}
+        boxShadow="0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)"
       >
         <Form onSubmit={this.handleSubmit}>
+          <Btn type="submit">
+            <FcSearch size={20} />
+          </Btn>
           <Input
             type="text"
             autoComplete="off"
@@ -47,9 +53,6 @@ export default class SearchBar extends Component {
             value={this.state.input}
             onChange={this.handleInputChange}
           ></Input>
-          <Btn type="submit">
-            <FcSearch size={20} />
-          </Btn>
         </Form>
       </Box>
     );

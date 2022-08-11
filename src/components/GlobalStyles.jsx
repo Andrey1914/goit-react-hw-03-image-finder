@@ -2,6 +2,11 @@ import { css } from '@emotion/react';
 import 'modern-normalize';
 
 export const GlobalStyles = css`
+  html {
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden;
+  }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -22,5 +27,10 @@ export const GlobalStyles = css`
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 `;

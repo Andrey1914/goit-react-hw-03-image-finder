@@ -9,8 +9,7 @@ export const Backdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: ${p => p.theme.colors.backdrop}; */
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: ${p => p.theme.colors.backdrop};
 `;
 
 export const ModalBoard = styled.div`
