@@ -6,6 +6,7 @@ import Button from 'components/Button/Button';
 import Loader from 'components/Loader/Loader';
 import Modal from 'components/Modal/Modal';
 import { Box } from 'components/Box';
+import getImages from 'services';
 
 export default class ImageGallery extends Component {
   state = {
@@ -20,14 +21,15 @@ export default class ImageGallery extends Component {
     const { page } = this.props;
     const prevRequest = prevProps.request;
     const newRequest = this.props.request;
-    const API_KEY = '28251298-ba7573d558705083124fcae2c';
+    // const API_KEY = '28251298-ba7573d558705083124fcae2c';
 
     if (prevRequest !== newRequest || page > prevProps.page) {
       this.setState({ loader: true });
-      fetch(
-        `https://pixabay.com/api/?q=${newRequest}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
-      )
-        .then(response => response.json())
+      // fetch(
+      //   `https://pixabay.com/api/?q=${newRequest}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
+      // )
+      getImages(newRequest, { page })
+        // .then(response => response.json())
         .then(data => {
           const { hits, totalHits, total } = data;
           if (total === 0) {
