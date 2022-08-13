@@ -6,7 +6,7 @@ import Button from 'components/Button/Button';
 import Loader from 'components/Loader/Loader';
 import Modal from 'components/Modal/Modal';
 import { Box } from 'components/Box';
-import getImages from 'services';
+import getImages from 'services/API';
 
 export default class ImageGallery extends Component {
   state = {
@@ -28,9 +28,10 @@ export default class ImageGallery extends Component {
       // fetch(
       //   `https://pixabay.com/api/?q=${newRequest}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
       // )
-      getImages(newRequest, { page })
+      getImages(newRequest)
         // .then(response => response.json())
         .then(data => {
+          console.log(data);
           const { hits, totalHits, total } = data;
           if (total === 0) {
             toast.error('The search has not given any results');
