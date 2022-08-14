@@ -21,17 +21,12 @@ export default class ImageGallery extends Component {
     const { page } = this.props;
     const prevRequest = prevProps.request;
     const newRequest = this.props.request;
-    // const API_KEY = '28251298-ba7573d558705083124fcae2c';
 
     if (prevRequest !== newRequest || page > prevProps.page) {
       this.setState({ loader: true });
-      // fetch(
-      //   `https://pixabay.com/api/?q=${newRequest}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
-      // )
-      getImages(newRequest)
-        // .then(response => response.json())
+
+      getImages(newRequest, { page })
         .then(data => {
-          console.log(data);
           const { hits, totalHits, total } = data;
           if (total === 0) {
             toast.error('The search has not given any results');

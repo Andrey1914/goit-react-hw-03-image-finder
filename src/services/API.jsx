@@ -13,7 +13,8 @@ async function getImages(newRequest, page) {
     page,
   });
 
-  return await axios.get(`${URL}?${options}`);
+  const { data } = await axios.get(`${URL}?${options}`);
+  return data;
 }
 
 export default getImages;
