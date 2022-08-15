@@ -52,8 +52,8 @@ export default class ImageGallery extends Component {
     this.setState({ modalURL: URL });
   };
 
-  toggleModal = () => {
-    this.setState(state => ({ showModal: !state.showModal }));
+  toggleModal = modalURL => {
+    this.setState(state => ({ modalURL, showModal: !state.showModal }));
   };
 
   render() {
@@ -71,11 +71,14 @@ export default class ImageGallery extends Component {
             gridGap={4}
             mb={4}
           >
-            <ImageGalleryItem
-              hits={hits}
-              onToggleModal={this.toggleModal}
-              getModalURL={this.getModalURL}
-            />
+            {hits.map(({ id, webformatURL, largeImageURL }) => (
+              <ImageGalleryItem
+                key={id}
+                webformatURL={webformatURL}
+                largeImageURL={largeImageURL}
+                onToggleModal={this.toggleModal}
+              />
+            ))}
           </Box>
         </div>
         {loader && <Loader />}
