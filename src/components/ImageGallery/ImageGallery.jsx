@@ -59,6 +59,7 @@ export default class ImageGallery extends Component {
   render() {
     const { hits, totalPage, loader, showModal, modalURL } = this.state;
     const { page, loadMore } = this.props;
+
     return (
       <>
         <div>
