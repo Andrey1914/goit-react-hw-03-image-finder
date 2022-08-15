@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Image } from './ImageGalleryItemStyled';
 import { Box } from 'components/Box';
 
@@ -22,3 +23,9 @@ export default function ImageGalleryItem({
     </Box>
   );
 }
+
+ImageGalleryItem.propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  onToggleModal: PropTypes.func.isRequired,
+};
