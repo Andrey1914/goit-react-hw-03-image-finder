@@ -1,10 +1,10 @@
+import { Box } from 'components/Box';
 import { Oval } from 'react-loader-spinner';
-import { Load } from './LoaderStyled';
 
 export default function Loader() {
   return (
-    <Load>
-      <Oval color="#00BFFF" height={80} width={80} ariaLabel="loading" />
-    </Load>
+    <Box display="flex" justifyContent="center" alignItems="center">
+      <Oval color="#00BFFF" height={100} width={100} ariaLabel="loading" />
+    </Box>
   );
 }
